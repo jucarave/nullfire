@@ -1,0 +1,42 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Exported builds
+export/
+*.exe
+*.apk
+*.zip
+*.x86_64
+*.app
+
+# User/editor settings (keep project.godot, ignore user-specific stuff)
+export_presets.cfg
+*.godot/tmp/
+
+# Godot Mono (C#) specific
+.mono/
+data_*/       # Mono data directories
+mono_crash.*  # Mono crash dumps
+
+# Temporary files
+*.translation
+
+# Godot Android build cache
+android/build/
+
+# Godot iOS build cache
+ios/build/
+
+# VSCode settings (optional)
+.vscode/
+
+# Rider settings (optional)
+.idea/
+
+# Godot-generated lock files
+.lock/
