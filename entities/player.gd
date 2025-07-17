@@ -6,13 +6,16 @@ const SHOOT_LOWER_TIME: float = 1.0
 var weapon: String = "gun"                  # This allows for changing weapon in the animation sprite
 var is_animation_busy: bool = false         # The animations are usually controlled by a function, when this variable is true it means that we are busy playing an animation that must override the rest
 var shooting_lower_delay: float = 0         # In seconds, how much time needs to pass to lower the gun after the last shot
+var projectile: Projectile = null           # Current projectile
 
 @export var gravity: int = 10
 @export var movement_speed: int = 128
 @export var jump_force: int = -250
+@export var projectile_scene: PackedScene
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ceiling_raycast: ShapeCast2D = $CeilingRaycast
+@onready var projectile_spawn_point: Node2D = $ProjectileSpawnPoint
 
 func process_movement() -> void:
 	var hor: float = Input.get_axis("left", "right")
@@ -30,11 +33,29 @@ func process_jump() -> void:
 func is_idle() -> bool:
 	return velocity.x == 0 and is_on_floor()
 
+func on_projectile_destroy() -> void:
+	projectile.on_destroy.disconnect(on_projectile_destroy)
+	projectile = null
+
+func spawn_projectile() -> void:
+	if projectile != null:
+		return
+	
+	projectile = projectile_scene.instantiate()
+	get_tree().root.add_child(projectile)
+	projectile.global_position = global_position
+	projectile.initialize(sprite.flip_h, projectile_spawn_point.position)
+	projectile.on_destroy.connect(on_projectile_destroy)
+
 func process_shoot() -> void:
 	if  Input.is_action_just_pressed("shoot"):
-		if shooting_lower_delay == 0 && is_idle():
+		if shooting_lower_delay == 0 and is_idle():
 			is_animation_busy = true
 			sprite.play("idle_" + weapon + "_raise")
+		
+		if shooting_lower_delay > 0 or not is_idle():
+			spawn_projectile()
+		
 		shooting_lower_delay = SHOOT_LOWER_TIME
 
 func process_sprite(delta: float) -> void:
@@ -69,6 +90,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		is_animation_busy = false
 	elif sprite.animation == "idle_" + weapon + "_raise":
 		is_animation_busy = false
+		spawn_projectile()
 		sprite.play("idle_gun_aim")
 
 func _process(delta: float) -> void:

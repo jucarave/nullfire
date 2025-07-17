@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://bp5i70pyp0jr0"]
+[gd_scene load_steps=27 format=3 uid="uid://bp5i70pyp0jr0"]
 
 [ext_resource type="Script" uid="uid://ca3wiu248mib4" path="res://entities/player.gd" id="1_b0kkn"]
 [ext_resource type="Texture2D" uid="uid://dtq4k8f3ja4oi" path="res://sprites/red_strike.png" id="1_merdl"]
+[ext_resource type="PackedScene" uid="uid://dpwqbsxsy3osx" path="res://entities/projectile.tscn" id="2_e4p34"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qsoyl"]
 atlas = ExtResource("1_merdl")
@@ -205,12 +206,13 @@ size = Vector2(12, 4)
 [node name="Player" type="CharacterBody2D"]
 slide_on_ceiling = false
 script = ExtResource("1_b0kkn")
+projectile_scene = ExtResource("2_e4p34")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_e4p34")
-animation = &"fall_gun"
+animation = &"idle_gun_aim"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -223,5 +225,8 @@ position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_b0kkn")
 target_position = Vector2(0, -14)
 max_results = 1
+
+[node name="ProjectileSpawnPoint" type="Node2D" parent="."]
+position = Vector2(16, -4)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
