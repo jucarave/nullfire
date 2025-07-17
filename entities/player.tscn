@@ -408,8 +408,6 @@ animation = &"run_l_gun_aim"
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_rfe5m")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="CeilingRaycast" type="ShapeCast2D" parent="."]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_b0kkn")

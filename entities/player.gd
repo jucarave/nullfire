@@ -26,6 +26,9 @@ func get_sprite_suffix() -> String:
 	return facing_direction + weapon
 
 func process_movement() -> void:
+	if is_animation_busy:
+		return
+	
 	var hor: float = Input.get_axis("left", "right")
 	
 	if hor != 0.0:
