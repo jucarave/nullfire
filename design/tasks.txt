@@ -7,7 +7,8 @@
 [x] Basic movement and jumping
 [x] Shooting while idle, moving and jumping animation
 [x] Shooting projectile
-[ ] Reverse looking sprites
+[x] Reverse looking sprites
+[ ] Move the camera vertically only when the player lands on a platform
 [ ] Create dust particles when landing on the floor
 [ ] Add crates that can be destroyed by bullets
 [ ] Add score points to the HUD
