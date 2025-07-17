@@ -1,0 +1,19 @@
+********************************************
+*                NULLFIRE                  *
+*           BY CAMILO RAMÍREZ              *
+*        DEV 16/07/2025 - ?                *
+********************************************
+
+[x] Basic movement and jumping
+[x] Shooting while idle, moving and jumping animation
+[ ] Shooting projectile
+[ ] Create dust particles when landing on the floor
+[ ] Add crates that can be destroyed by bullets
+[ ] Add score points to the HUD
+[ ] Add player portrait to the HUD
+[ ] Add player health, link health to portrait
+[ ] Add spiked traps that hurt the player
+[ ] Add HUD prompt message, pause the game
+[ ] When player dies, explode then show prompt to restart
+[ ] Save game
+[ ] Restore game
