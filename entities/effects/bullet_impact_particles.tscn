@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://blhg2c3y6moi7"]
+
+[ext_resource type="Texture2D" uid="uid://cot63vd0l3sun" path="res://sprites/bullet_impact_particles.png" id="1_kkdr5"]
+[ext_resource type="Script" uid="uid://dsrupxfpodhbj" path="res://entities/effects/particle_effect.gd" id="2_mi4ke"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi4ke"]
+atlas = ExtResource("1_kkdr5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvhvj"]
+atlas = ExtResource("1_kkdr5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ret1j"]
+atlas = ExtResource("1_kkdr5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72r8u"]
+atlas = ExtResource("1_kkdr5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_stq1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi4ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvhvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ret1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72r8u")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 14.0
+}]
+
+[node name="BulletImpactParticles" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_stq1u")
+script = ExtResource("2_mi4ke")

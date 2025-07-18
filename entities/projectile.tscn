@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpwqbsxsy3osx"]
+[gd_scene load_steps=5 format=3 uid="uid://dpwqbsxsy3osx"]
 
 [ext_resource type="Texture2D" uid="uid://ca0r6hlk5b7sv" path="res://sprites/projectiles.png" id="1_46mfb"]
 [ext_resource type="Script" uid="uid://chge71y1pq1ik" path="res://entities/projectile.gd" id="1_jfshl"]
+[ext_resource type="PackedScene" uid="uid://blhg2c3y6moi7" path="res://entities/effects/bullet_impact_particles.tscn" id="2_jnjrb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jfshl"]
 size = Vector2(10, 7)
 
 [node name="Projectile" type="Area2D"]
 script = ExtResource("1_jfshl")
+collision_particles_scene = ExtResource("2_jnjrb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

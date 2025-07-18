@@ -10,7 +10,7 @@
 [x] Reverse looking sprites
 [x] Move the camera vertically only when the player lands on a platform
 [x] Create dust particles when landing on the floor
-[ ] Add collision particles for bullets
+[x] Add collision particles for bullets
 [ ] Add crates that can be destroyed by bullets
 [ ] Add score points to the HUD
 [ ] Add player portrait to the HUD
