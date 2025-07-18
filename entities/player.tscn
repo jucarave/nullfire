@@ -1,8 +1,9 @@
-[gd_scene load_steps=47 format=3 uid="uid://bp5i70pyp0jr0"]
+[gd_scene load_steps=48 format=3 uid="uid://bp5i70pyp0jr0"]
 
 [ext_resource type="Script" uid="uid://ca3wiu248mib4" path="res://entities/player.gd" id="1_b0kkn"]
 [ext_resource type="Texture2D" uid="uid://dtq4k8f3ja4oi" path="res://sprites/red_strike.png" id="1_merdl"]
 [ext_resource type="PackedScene" uid="uid://dpwqbsxsy3osx" path="res://entities/projectile.tscn" id="2_e4p34"]
+[ext_resource type="PackedScene" uid="uid://cep2v4k3g8u3v" path="res://entities/effects/dust_particles.tscn" id="3_rfe5m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ib8tg"]
 atlas = ExtResource("1_merdl")
@@ -397,6 +398,7 @@ size = Vector2(12, 4)
 slide_on_ceiling = false
 script = ExtResource("1_b0kkn")
 projectile_scene = ExtResource("2_e4p34")
+dust_particles_scene = ExtResource("3_rfe5m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -416,5 +418,8 @@ max_results = 1
 
 [node name="ProjectileSpawnPoint" type="Node2D" parent="."]
 position = Vector2(16, -4)
+
+[node name="DustParticlesSpawnPoint" type="Node2D" parent="."]
+position = Vector2(0, 16)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

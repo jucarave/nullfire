@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cep2v4k3g8u3v"]
+
+[ext_resource type="Texture2D" uid="uid://bafp2wjj1m0mp" path="res://sprites/dust_particles.png" id="1_tw8ty"]
+[ext_resource type="Script" uid="uid://dsrupxfpodhbj" path="res://entities/effects/particle_effect.gd" id="2_4bjgs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bjgs"]
+atlas = ExtResource("1_tw8ty")
+region = Rect2(0, 0, 19, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c054l"]
+atlas = ExtResource("1_tw8ty")
+region = Rect2(19, 0, 19, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_by58v"]
+atlas = ExtResource("1_tw8ty")
+region = Rect2(38, 0, 19, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03746"]
+atlas = ExtResource("1_tw8ty")
+region = Rect2(57, 0, 19, 5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5sudb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bjgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c054l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by58v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03746")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 14.0
+}]
+
+[node name="DustParticles" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(0, -2.5)
+sprite_frames = SubResource("SpriteFrames_5sudb")
+frame_progress = 0.114105
+script = ExtResource("2_4bjgs")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]
