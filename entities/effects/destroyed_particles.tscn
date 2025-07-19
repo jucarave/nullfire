@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0kr5ktsjd28d"]
+
+[ext_resource type="Texture2D" uid="uid://dfiig7qvtyec0" path="res://sprites/items.png" id="1_mpgar"]
+[ext_resource type="Script" uid="uid://cooqxkw8t26ty" path="res://entities/effects/destroyed_particles.gd" id="1_r4shj"]
+
+[node name="DestroyedParticles" type="Node2D" node_paths=PackedStringArray("particles")]
+script = ExtResource("1_r4shj")
+particles = [NodePath("Particle"), NodePath("Particle2"), NodePath("Particle3"), NodePath("Particle4")]
+
+[node name="Particle" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(2, 1)
+texture = ExtResource("1_mpgar")
+region_enabled = true
+region_rect = Rect2(64, 0, 8, 8)
+
+[node name="Particle2" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(3, -2)
+texture = ExtResource("1_mpgar")
+region_enabled = true
+region_rect = Rect2(72, 0, 8, 8)
+
+[node name="Particle3" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-3, -3)
+texture = ExtResource("1_mpgar")
+region_enabled = true
+region_rect = Rect2(64, 8, 8, 8)
+
+[node name="Particle4" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-3, 1)
+texture = ExtResource("1_mpgar")
+region_enabled = true
+region_rect = Rect2(72, 8, 8, 8)

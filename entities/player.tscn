@@ -404,7 +404,7 @@ dust_particles_scene = ExtResource("3_rfe5m")
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_e4p34")
-animation = &"run_l_gun_aim"
+animation = &"idle_r_gun"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -417,7 +417,7 @@ target_position = Vector2(0, -14)
 max_results = 1
 
 [node name="ProjectileSpawnPoint" type="Node2D" parent="."]
-position = Vector2(16, -4)
+position = Vector2(16, -1)
 
 [node name="DustParticlesSpawnPoint" type="Node2D" parent="."]
 position = Vector2(0, 16)

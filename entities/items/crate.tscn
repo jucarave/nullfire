@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://c6rt5iatvhxl0"]
+
+[ext_resource type="Script" uid="uid://yigx186i8gno" path="res://entities/items/crate.gd" id="1_5r385"]
+[ext_resource type="Texture2D" uid="uid://dfiig7qvtyec0" path="res://sprites/items.png" id="1_ahha3"]
+[ext_resource type="PackedScene" uid="uid://d0kr5ktsjd28d" path="res://entities/effects/destroyed_particles.tscn" id="2_8p161"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5r385"]
+atlas = ExtResource("1_ahha3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p161"]
+atlas = ExtResource("1_ahha3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvcov"]
+atlas = ExtResource("1_ahha3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwyfy"]
+atlas = ExtResource("1_ahha3")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fsbtl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5r385")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p161")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvcov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwyfy")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1ysl"]
+size = Vector2(16, 16)
+
+[node name="Crate" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_5r385")
+destroyed_particles = ExtResource("2_8p161")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_fsbtl")
+speed_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_q1ysl")

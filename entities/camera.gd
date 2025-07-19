@@ -4,7 +4,7 @@ class_name CameraNullfire
 const HORIZONTAL_DEAD_ZONE: float = 64
 const VERTICAL_OFFSET: float = 32
 
-var last_platform_y: float = -1
+var last_platform_y: float = -1                                # This let us know which was the last platform the player stayed on in order to lerp there even if the player has jumped again
 
 @export var player: Player
 @export var follow_speed: float = 128

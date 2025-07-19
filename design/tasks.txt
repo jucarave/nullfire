@@ -11,7 +11,8 @@
 [x] Move the camera vertically only when the player lands on a platform
 [x] Create dust particles when landing on the floor
 [x] Add collision particles for bullets
-[ ] Add crates that can be destroyed by bullets
+[x] Add crates that can be destroyed by bullets
+[ ] Add score items that can be picked
 [ ] Add score points to the HUD
 [ ] Add player portrait to the HUD
 [ ] Add player health, link health to portrait
