@@ -21,3 +21,4 @@
 [ ] When player dies, explode then show prompt to restart
 [ ] Save game
 [ ] Restore game
+[ ] fix player not being able to move after being next to a wall during a jump

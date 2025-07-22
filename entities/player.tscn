@@ -394,7 +394,7 @@ size = Vector2(12, 31)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0kkn"]
 size = Vector2(12, 4)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 slide_on_ceiling = false
 script = ExtResource("1_b0kkn")
 projectile_scene = ExtResource("2_e4p34")
