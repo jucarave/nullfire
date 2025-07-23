@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://7115xnc7gxmy"]
+[gd_scene load_steps=7 format=3 uid="uid://7115xnc7gxmy"]
 
 [ext_resource type="PackedScene" uid="uid://bp5i70pyp0jr0" path="res://entities/player.tscn" id="1_j8ivh"]
 [ext_resource type="PackedScene" uid="uid://bgbphhhxbtoby" path="res://tile_maps/test_tile_map.tscn" id="1_nd71p"]
 [ext_resource type="PackedScene" uid="uid://co3pk1lrdl1hi" path="res://entities/camera.tscn" id="3_nd71p"]
 [ext_resource type="PackedScene" uid="uid://c6rt5iatvhxl0" path="res://entities/items/crate.tscn" id="4_7ddre"]
 [ext_resource type="PackedScene" uid="uid://b1604fstw65q6" path="res://entities/items/floppy_disk.tscn" id="5_qjeyg"]
+[ext_resource type="PackedScene" uid="uid://b5eu68d23nenh" path="res://entities/items/neuro_brain.tscn" id="6_3qnke"]
 
 [node name="TestScene" type="Node2D"]
 
@@ -22,6 +23,7 @@ treasure = ExtResource("5_qjeyg")
 
 [node name="Crate2" parent="." instance=ExtResource("4_7ddre")]
 position = Vector2(152, 48)
+treasure = ExtResource("6_3qnke")
 
 [node name="Crate3" parent="." instance=ExtResource("4_7ddre")]
 position = Vector2(136, 144)

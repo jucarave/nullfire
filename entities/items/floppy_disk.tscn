@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1604fstw65q6"]
+[gd_scene load_steps=5 format=3 uid="uid://b1604fstw65q6"]
 
 [ext_resource type="Script" uid="uid://cg5qmx72vi1yk" path="res://entities/items/treasure.gd" id="1_5g5ic"]
 [ext_resource type="Texture2D" uid="uid://dfiig7qvtyec0" path="res://sprites/items.png" id="1_qcsco"]
+[ext_resource type="PackedScene" uid="uid://qj7wk8o3dsbt" path="res://entities/ui/item_score.tscn" id="2_hcbty"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5g5ic"]
 size = Vector2(16, 16)
 
 [node name="FloppyDisk" type="Area2D"]
 script = ExtResource("1_5g5ic")
+score = 100
+item_score = ExtResource("2_hcbty")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

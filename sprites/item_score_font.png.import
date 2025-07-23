@@ -1,0 +1,25 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://evkr6ae8xpy1"
+path="res://.godot/imported/item_score_font.png-144207026992d24f4585e7ce59cc67c2.fontdata"
+
+[deps]
+
+source_file="res://sprites/item_score_font.png"
+dest_files=["res://.godot/imported/item_score_font.png-144207026992d24f4585e7ce59cc67c2.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("48-57")
+kerning_pairs=PackedStringArray()
+columns=10
+rows=1
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+ascent=0
+descent=0
+fallbacks=[]
+compress=false
+scaling_mode=1

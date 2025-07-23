@@ -1,4 +1,5 @@
 extends AnimatedSprite2D
+class_name ParticleEffect
 
 func _ready() -> void:
 	play("default")

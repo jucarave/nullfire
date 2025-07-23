@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5eu68d23nenh"]
+
+[ext_resource type="Script" uid="uid://cg5qmx72vi1yk" path="res://entities/items/treasure.gd" id="1_ciar1"]
+[ext_resource type="PackedScene" uid="uid://qj7wk8o3dsbt" path="res://entities/ui/item_score.tscn" id="2_7nw5j"]
+[ext_resource type="Texture2D" uid="uid://dfiig7qvtyec0" path="res://sprites/items.png" id="2_mqlij"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g5ic"]
+size = Vector2(16, 16)
+
+[node name="NeuroBrian" type="Area2D"]
+script = ExtResource("1_ciar1")
+score = 250
+item_score = ExtResource("2_7nw5j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(0.5, -8)
+texture = ExtResource("2_mqlij")
+region_enabled = true
+region_rect = Rect2(96, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_5g5ic")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

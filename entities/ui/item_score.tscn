@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://qj7wk8o3dsbt"]
+
+[ext_resource type="FontFile" uid="uid://evkr6ae8xpy1" path="res://sprites/item_score_font.png" id="1_ly1s4"]
+[ext_resource type="Script" uid="uid://dlsugnemddvxt" path="res://entities/ui/item_score.gd" id="2_t2hpf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fva34"]
+font = ExtResource("1_ly1s4")
+font_color = Color(0.333333, 0.333333, 1, 1)
+
+[node name="ItemScore" type="Node2D"]
+script = ExtResource("2_t2hpf")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+texture_repeat = 1
+offset_left = -10.0
+offset_top = -6.0
+offset_right = 30.0
+offset_bottom = 17.0
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+text = "0"
+label_settings = SubResource("LabelSettings_fva34")
+horizontal_alignment = 1
+vertical_alignment = 1

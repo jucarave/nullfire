@@ -1,13 +1,13 @@
 extends Area2D
 class_name Projectile
 
+signal on_destroy()
+
 @export var time_to_live: float = 0.6                 # In seconds, to prevent bullets flying across the map
 @export var velocity: float = 256
 @export var collision_particles_scene: PackedScene
 
 @onready var sprite: Sprite2D = $Sprite2D
-
-signal on_destroy()
 
 # Flips the sprite and sets its position relative to the
 # shooter depending if it's looking to the left or right

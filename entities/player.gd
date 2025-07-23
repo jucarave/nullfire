@@ -100,7 +100,7 @@ func process_shoot() -> void:
 # are falling or jumping
 func process_sprite(delta: float) -> void:
 	if is_animation_busy:
-		return;
+		return
 	
 	var sprite_suffix: String = ""
 	
@@ -143,10 +143,6 @@ func _process(delta: float) -> void:
 	process_sprite(delta)
 
 func _physics_process(_delta: float) -> void:
-	# This is to prevent the frictioninig sliding on walls
-	if is_on_wall() and velocity.y > 0:
-		velocity.x = 0
-	
 	if not is_on_floor():
 		was_on_floor = false
 		velocity.y += gravity
