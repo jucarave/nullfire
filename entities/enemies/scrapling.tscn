@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=3 uid="uid://cpll40pasfk81"]
+
+[ext_resource type="Texture2D" uid="uid://dq3ejm8pe7flp" path="res://sprites/scrapling.png" id="1_cbc3c"]
+[ext_resource type="Script" uid="uid://dp0fmk8h711fc" path="res://entities/enemies/scrapling.gd" id="1_nbh0h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbh0h"]
+atlas = ExtResource("1_cbc3c")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1h0f"]
+atlas = ExtResource("1_cbc3c")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30ouo"]
+atlas = ExtResource("1_cbc3c")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo065"]
+atlas = ExtResource("1_cbc3c")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhssr"]
+atlas = ExtResource("1_cbc3c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsbjm"]
+atlas = ExtResource("1_cbc3c")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4574d"]
+atlas = ExtResource("1_cbc3c")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vllwl"]
+atlas = ExtResource("1_cbc3c")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxlka"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbh0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1h0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30ouo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo065")
+}],
+"loop": true,
+"name": &"walk_l",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhssr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsbjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4574d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vllwl")
+}],
+"loop": true,
+"name": &"walk_r",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sy5t6"]
+
+[node name="Scrapling" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_nbh0h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_xxlka")
+animation = &"walk_r"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_sy5t6")
+
+[node name="WallRaycast" type="RayCast2D" parent="."]
+position = Vector2(0, -10)
+target_position = Vector2(16, 0)
+collision_mask = 2
+
+[node name="LedgeRaycast" type="RayCast2D" parent="."]
+position = Vector2(10, -10)
+target_position = Vector2(0, 16)
+collision_mask = 2

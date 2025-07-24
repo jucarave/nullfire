@@ -44,7 +44,7 @@ animations = [{
 size = Vector2(16, 16)
 
 [node name="Crate" type="StaticBody2D"]
-collision_layer = 2
+collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_5r385")
 destroyed_particles = ExtResource("2_8p161")

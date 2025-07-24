@@ -8,6 +8,7 @@
 size = Vector2(16, 16)
 
 [node name="NeuroBrian" type="Area2D"]
+collision_layer = 4
 script = ExtResource("1_ciar1")
 score = 250
 item_score = ExtResource("2_7nw5j")

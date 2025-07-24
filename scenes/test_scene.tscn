@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://7115xnc7gxmy"]
+[gd_scene load_steps=8 format=3 uid="uid://7115xnc7gxmy"]
 
 [ext_resource type="PackedScene" uid="uid://bp5i70pyp0jr0" path="res://entities/player.tscn" id="1_j8ivh"]
 [ext_resource type="PackedScene" uid="uid://bgbphhhxbtoby" path="res://tile_maps/test_tile_map.tscn" id="1_nd71p"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6rt5iatvhxl0" path="res://entities/items/crate.tscn" id="4_7ddre"]
 [ext_resource type="PackedScene" uid="uid://b1604fstw65q6" path="res://entities/items/floppy_disk.tscn" id="5_qjeyg"]
 [ext_resource type="PackedScene" uid="uid://b5eu68d23nenh" path="res://entities/items/neuro_brain.tscn" id="6_3qnke"]
+[ext_resource type="PackedScene" uid="uid://cpll40pasfk81" path="res://entities/enemies/scrapling.tscn" id="7_wtsjf"]
 
 [node name="TestScene" type="Node2D"]
 
@@ -36,3 +37,12 @@ frame = 1
 [node name="Crate5" parent="." instance=ExtResource("4_7ddre")]
 position = Vector2(56, 144)
 frame = 1
+
+[node name="Scrapling" parent="." instance=ExtResource("7_wtsjf")]
+position = Vector2(152, 192)
+
+[node name="Scrapling2" parent="." instance=ExtResource("7_wtsjf")]
+position = Vector2(60, 192)
+
+[node name="Scrapling3" parent="." instance=ExtResource("7_wtsjf")]
+position = Vector2(239, 80)

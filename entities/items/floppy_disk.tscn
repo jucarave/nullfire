@@ -8,6 +8,7 @@
 size = Vector2(16, 16)
 
 [node name="FloppyDisk" type="Area2D"]
+collision_layer = 4
 script = ExtResource("1_5g5ic")
 score = 100
 item_score = ExtResource("2_hcbty")

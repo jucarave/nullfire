@@ -13,6 +13,7 @@
 [x] Add collision particles for bullets
 [x] Add crates that can be destroyed by bullets
 [x] Add score items that can be picked
+[ ] Add enemy that patrols left to right and can be killed
 [ ] Add score points to the HUD
 [ ] Add player portrait to the HUD
 [ ] Add player health, link health to portrait
